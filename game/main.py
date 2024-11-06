@@ -1,13 +1,13 @@
 import random
-print('Bienvenido al juego piedra, papel y tijera')
+print('Welcome to the game rock, scissors and paper')
 
 def choose_options():
-  options = ['piedra', 'papel', 'tijera']
-  user_option = input('piedra, papel o tijera => ')
+  options = ['rock', 'scissors', 'paper']
+  user_option = input('rock, scissors or paper => ')
   user_option = user_option.lower()
   computer_option = random.choice(options)
   if not user_option in options:
-    print('Esa opción no es válida')
+    print('That option is not valid')
     # continue
     return None, None
   return user_option, computer_option
@@ -16,33 +16,33 @@ def choose_options():
 def check_rules(user_option, computer_option, user_wins, computer_wins):
     try:
         if user_option == computer_option:
-            print('Empate')
-        elif user_option == 'piedra':
-            if computer_option == 'tijera':
-                print('Piedra gana a tijera\n')
-                print('Punto para el user 🧑\n')
+            print('Tie')
+        elif user_option == 'rock':
+            if computer_option == 'scissor':
+                print('Rock beats Scissor\n')
+                print('Point for the user 🧑\n')
                 user_wins += 1
             else:
-                print('Papel gana a piedra\n')
-                print('Punto para el computador 🤖\n')
+                print('Paper beats Rock\n')
+                print('Point for the computer 🤖\n')
                 computer_wins += 1
-        elif user_option == 'tijera':
-            if computer_option == 'papel':
-                print('Tijera gana a Papel\n')
-                print('Punto para el user 🧑\n')
+        elif user_option == 'scissor':
+            if computer_option == 'paper':
+                print('Scissor beats Paper\n')
+                print('Point for the user 🧑\n')
                 user_wins += 1
             else:
-                print('Piedra gana a tijera\n')
-                print('Punto para el computador 🤖\n')
+                print('Rock beats Scissors\n')
+                print('Point for the computer 🤖\n')
                 computer_wins += 1
-        elif user_option == 'papel':
-            if computer_option == 'piedra':
-                print('Papel gana a piedra\n')
-                print('Punto para el user 🧑\n')
+        elif user_option == 'paper':
+            if computer_option == 'rock':
+                print('Paper beats Rock\n')
+                print('Point for the user 🧑\n')
                 user_wins += 1
             else:
-                print('Tijera gana a papel\n')
-                print('Punto para el computador 🤖\n')
+                print('Scissors beats Paper\n')
+                print('Point for the computer 🤖\n')
                 computer_wins += 1
         return user_wins, computer_wins
     except Exception as e:
@@ -68,10 +68,10 @@ User points🧑 => {user_wins}\n''')
     print(f'''Computer option🤖 => {computer_option}
 User option🧑 => {user_option}\n''')
     if user_wins == 3:
-      print('El ganador es el usuario🧑')
+      print('User Wins🧑')
       break
     elif computer_wins == 3:
-      print('El ganador es la computadora 🤖')
+      print('Computer Wins 🤖')
       break
 
 
